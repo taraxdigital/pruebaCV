@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV | Elena Perandrés - AI & Frontend Specialist</title>
-    <!-- Fuentes Premium -->
+    <title>CV | Elena Perandrés</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --sidebar-bg: #0f172a; /* Azul muy oscuro */
+            --sidebar-bg: #0f172a;
             --main-bg: #ffffff;
             --text-dark: #1e293b;
             --text-gray: #475569;
-            --accent: #d4af37; /* Dorado */
+            --accent: #d4af37;
+            --accent-gradient: linear-gradient(45deg, #d4af37, #caa305);
             --border-color: #e2e8f0;
         }
 
@@ -27,169 +28,211 @@
             display: flex;
             justify-content: center;
             padding: 20px;
-            font-size: 13.5px;
-            line-height: 1.4;
+            font-size: 12.8px; 
+            line-height: 1.35;
             color: var(--text-dark);
         }
 
-        /* --- HOJA A4 --- */
+        /* --- HOJA A4 ESTRICTA --- */
+        /* --- CONFIGURACIÓN A4 PERFECTA --- */
         .page {
             background: white;
             width: 210mm;
-            min-height: 297mm;
+            height: 296mm; /* Altura fija para forzar el fondo hasta abajo */
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
             display: grid;
-            grid-template-columns: 200px 1fr;
+            grid-template-columns: 72mm 1fr; /* Sidebar un poco más ancha para que respire */
+            overflow: hidden; /* Evita desbordes */
         }
 
         /* === BARRA LATERAL (IZQUIERDA) === */
+
+        
+        /* === BARRA LATERAL (MODIFICADA PARA LLEGAR ABAJO) === */
         aside {
             background: var(--sidebar-bg);
             color: white;
-            padding: 30px 20px;
+            padding: 35px 22px; 
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 25px; /* Espacio constante entre elementos */
+            
+            /* --- EL CAMBIO CLAVE --- */
+            height: 100%; /* Ocupa todo el alto disponible */
+            min-height: 296mm; /* Fuerza bruta: mide lo mismo que la hoja */
+            position: relative; /* Asegura que se pinte correctamente */
         }
 
+        /* Bloque superior de la sidebar para agrupar perfil y contacto */
+        .sidebar-top {
+            display: flex;
+            flex-direction: column;
+            gap: 50px; /* Espacio entre foto, contacto y skills */
+        }
+
+
+
         .avatar {
-            width: 80px; height: 80px;
-            margin: 0 auto 10px;
-            background: transparent;
+            width: 70px; height: 70px;
+            margin: 0 auto 5px;
             border: 2px solid var(--accent);
             color: var(--accent);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         h3.side-title {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: var(--accent);
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 5px;
-            margin-bottom: 10px;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
             font-weight: 700;
         }
 
         .contact-item {
             display: flex; align-items: center; gap: 8px;
-            font-size: 0.75rem; margin-bottom: 8px; color: #cbd5e1;
+            font-size: 0.7rem; margin-bottom: 6px; color: #cbd5e1;
         }
         .contact-item i { color: var(--accent); width: 12px; }
         .contact-item a { color: inherit; text-decoration: none; }
 
-        .skill-box { margin-bottom: 8px; }
-        .skill-label { display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 3px; }
-        .skill-bar-bg { background: rgba(255,255,255,0.1); height: 4px; border-radius: 2px; }
+        .skill-box { margin-bottom: 6px; }
+        .skill-label { display: flex; justify-content: space-between; font-size: 0.65rem; margin-bottom: 2px; }
+        .skill-bar-bg { background: rgba(255,255,255,0.1); height: 3px; border-radius: 2px; }
         .skill-bar-fill { background: var(--accent); height: 100%; border-radius: 2px; }
 
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 5px; }
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 4px; }
         .tag {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
-            padding: 3px 6px; border-radius: 3px;
-            font-size: 0.7rem; color: #e2e8f0;
+            padding: 2px 5px; border-radius: 3px;
+            font-size: 0.65rem; color: #e2e8f0;
         }
 
-        /* === CONTENIDO PRINCIPAL (DERECHA) === */
-        main {
-            padding: 35px 35px;
+        /* --- ESTILOS NUEVOS PARA REDES SOCIALES --- */
+        .social-icons-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        .social-link {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-link:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
         }
 
+        /* === CONTENIDO PRINCIPAL === */
+            main {
+            padding: 40px 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Espacio global entre grandes bloques */
+        }
         header { 
             border-bottom: 2px solid var(--border-color); 
-            padding-bottom: 15px; 
-            margin-bottom: 20px; 
+            padding-bottom: 10px; 
+            margin-bottom: 15px; 
         }
-       /* ESTILO MEJORADO DEL H1 */
+        /* Sección general */
+        section {
+            margin-bottom: 5px; /* Ajuste fino */
+        }
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.6rem;
-            color: var(--sidebar-bg); /* Color base para el nombre */
-            margin-bottom: 12px; /* MÁS ESPACIO AQUÍ */
+            font-size: 2.2rem;
+            color: var(--sidebar-bg);
+            margin-bottom: 5px;
             line-height: 1;
         }
-
-        /* EL APELLIDO CON DEGRADADO DORADO */
         h1 span {
-            background: linear-gradient(45deg, var(--accent), #9a7d2e);
+            background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 700;
         }
-          .subtitle {
-            font-size: 0.95rem;
+
+        .subtitle {
+            font-size: 0.85rem;
             color: var(--sidebar-bg);
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             font-weight: 700;
             opacity: 0.8;
+            /* --- NUEVO: ESPACIO SUPERIOR --- */
+    margin-top: 20px; 
+    display: block; 
         }
+
         .summary {
             font-style: italic;
             color: var(--text-gray);
-            font-size: 0.9rem;
-            margin-bottom: 25px;
+            font-size: 0.85rem;
+            margin-bottom: 18px;
             border-left: 3px solid var(--accent);
-            padding-left: 15px;
+            padding-left: 12px;
+            line-height: 1.4;
         }
 
         h2.section-title {
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--sidebar-bg);
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+            padding-bottom: 4px;
+            margin-bottom: 12px;
             display: flex; align-items: center; gap: 8px;
+            margin-top: 5px;
         }
-        h2.section-title i { color: var(--accent); }
+        h2.section-title i { color: var(--accent); font-size: 0.9rem; }
 
-        .item-block { margin-bottom: 18px; }
+        .item-block { margin-bottom: 14px; }
         
         .item-header { 
             display: flex; justify-content: space-between; align-items: baseline; 
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
         .item-role { font-weight: 700; font-size: 1rem; color: var(--sidebar-bg); }
-        .item-company { color: #bca04d; font-weight: 600; font-size: 0.9rem; margin-left: 5px;}
-        .item-date { font-size: 0.75rem; color: #94a3b8; font-weight: 500; }
+        .item-company { color: #bca04d; font-weight: 600; font-size: 0.85rem; margin-left: 5px;}
+        .item-date { font-size: 0.7rem; color: #94a3b8; font-weight: 500; }
         
-        .item-desc ul { 
-            padding-left: 15px; margin: 0; 
-        }
+        .item-desc ul { padding-left: 14px; margin: 0; }
         .item-desc li { 
-            font-size: 0.85rem; color: var(--text-gray); margin-bottom: 4px; 
+            font-size: 0.82rem; 
+            color: var(--text-gray); 
+            margin-bottom: 2px; 
         }
 
         .tech-badge {
-            display: inline-block; font-size: 0.65rem; 
-            background: #f1f5f9; padding: 1px 5px; 
+            display: inline-block; font-size: 0.6rem; 
+            background: #f1f5f9; padding: 1px 4px; 
             border-radius: 3px; color: #64748b; border: 1px solid #e2e8f0;
             margin-right: 3px; margin-top: 2px;
         }
 
-        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .edu-item h4 { font-size: 0.85rem; margin-bottom: 2px; color: var(--sidebar-bg); }
-        .edu-item span { font-size: 0.75rem; color: var(--text-gray); display: block; }
+        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .edu-item h4 { font-size: 0.8rem; margin-bottom: 1px; color: var(--sidebar-bg); }
+        .edu-item span { font-size: 0.7rem; color: var(--text-gray); display: block; }
 
         .print-btn {
-            position: fixed; bottom: 30px; right: 30px;
+            position: fixed; bottom: 20px; right: 20px;
             background: var(--sidebar-bg); color: white;
-            border: none; padding: 12px 25px; border-radius: 30px;
+            border: none; padding: 10px 20px; border-radius: 30px;
             font-weight: bold; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: 0.2s;
         }
-        .print-btn:hover { background: var(--accent); color: black; }
 
         @media print {
             body { background: white; padding: 0; margin: 0; }
-            .page { box-shadow: none; margin: 0; width: 100%; height: auto; }
+            .page { box-shadow: none; margin: 0; width: 100%; height: 100%; }
             .print-btn { display: none; }
             @page { margin: 0; size: A4; }
             * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -212,7 +255,7 @@
                 <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:helenaperand@gmail.com">helenaperand@gmail.com</a></div>
                 <div class="contact-item"><i class="fas fa-phone"></i> +34 680 613 291</div>
                 <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Granada, España</div>
-                <div class="contact-item"><i class="fas fa-globe"></i> <a href="https://taraxdigital.netlify.app">taraxdigital.app</a></div>
+                <div class="contact-item"><i class="fas fa-globe"></i> <a href="https://taraxdigital.netlify.app" target="_blank">taraxdigital.app</a></div>
                 <div class="contact-item"><i class="fab fa-linkedin"></i> /elena-perandres</div>
             </div>
 
@@ -227,12 +270,12 @@
                     <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div>
                 </div>
                 <div class="skill-box">
-                    <div class="skill-label"><span>WordPress & CMS</span> <span>95%</span></div>
+                    <div class="skill-label"><span>WordPress & CMS</span> <span>90%</span></div>
                     <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
                 </div>
                 <div class="skill-box">
                     <div class="skill-label"><span>SEO Técnico</span> <span>90%</span></div>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
                 </div>
                 <div class="skill-box">
                     <div class="skill-label"><span>Canvas / Audio API</span> <span>95%</span></div>
@@ -244,14 +287,14 @@
                 <h3 class="side-title">Herramientas</h3>
                 <div class="tag-cloud">
                     <span class="tag">VS Code</span>
-                    <span class="tag">DaVinci Resolve</span>
+                    <span class="tag">DaVinci</span>
                     <span class="tag">Affinity</span>
                     <span class="tag">Midjourney</span>
                     <span class="tag">Meta.ai</span>
-                    <span class="tag">ChatGPT 4</span>
-                    <span class="tag">Git/GitHub</span>
+                    <span class="tag">ChatGPT</span>
+                    <span class="tag">GitHub</span>
                     <span class="tag">Netlify</span>
-                    <span class="tag">OBS Studio</span>
+                    <span class="tag">OBS</span>
                     <span class="tag">Canva Pro</span>
                 </div>
             </div>
@@ -259,81 +302,87 @@
             <div>
                 <h3 class="side-title">Marketing</h3>
                 <div class="tag-cloud">
-                    <span class="tag">Content AI Architect</span>
+                    <span class="tag">Content Architect</span>
                     <span class="tag">Growth Hacking</span>
                     <span class="tag">Comunidades (+200k)</span>
-                    <span class="tag">Video-anuncios</span>
+                    <span class="tag">Video Ads</span>
                 </div>
             </div>
+
+            <!-- NUEVA SECCIÓN DE REDES SOCIALES -->
+            <div>
+                <h3 class="side-title">Redes Sociales</h3>
+                <div class="social-icons-container">
+                    <a href="https://www.instagram.com/taraxdigital/" target="_blank" class="social-link" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@spinning-music_bySatarax" target="_blank" class="social-link" title="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.facebook.com/taraxdigital" target="_blank" class="social-link" title="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+
         </aside>
 
         <!-- CONTENIDO PRINCIPAL -->
         <main>
-              <header>
-                <!-- NOMBRE CON DEGRADADO EN EL APELLIDO -->
+            <header>
                 <h1>Elena <span>Perandrés</span></h1>
                 <div class="subtitle">AI Content Architect | Frontend Developer</div>
             </header>
 
             <div class="summary">
-                "Especialista en la integración de Inteligencia Artificial para la creación de activos digitales y desarrollo web. Fusiono la ingeniería de prompts avanzada con habilidades técnicas de programación para crear productos editoriales (libros, narrativa) y herramientas interactivas. Lidero comunidades masivas (+200k) aplicando estrategias de crecimiento orgánico y monetización."
+                "Especialista en la integración de IA para la creación de activos digitales y desarrollo web. Fusiono la ingeniería de prompts avanzada con programación para crear productos editoriales y herramientas interactivas. Lidero comunidades masivas (+400k) aplicando estrategias de crecimiento orgánico y monetización."
             </div>
 
             <!-- PROYECTOS / EXPERIENCIA PRINCIPAL -->
             <section>
-                <h2 class="section-title"><i class="fas fa-brain"></i> Experiencia en IA & Desarrollo Web</h2>
+                <h2 class="section-title"><i class="fas fa-brain"></i> Experiencia en IA & Desarrollo</h2>
                 
-                <!-- AQUÍ ESTÁ TU NUEVA EXPERIENCIA DE IA -->
                 <div class="item-block">
                     <div class="item-header">
-                        <div>
-                            <span class="item-role">Generative AI Specialist & Content Architect</span>
-                            <span class="item-company">| Tarax Digital</span>
-                        </div>
+                        <div><span class="item-role">AI Content Architect</span> <span class="item-company">| Tarax Digital</span></div>
                         <span class="item-date">Actualidad</span>
                     </div>
                     <div class="item-desc">
-                        Liderazgo en la creación de ecosistemas narrativos y activos digitales mediante IA.
+                        Liderazgo en la creación de ecosistemas narrativos y activos digitales con IA.
                         <ul>
-                            <li><strong>Ingeniería de Prompts Avanzada:</strong> Desarrollo de flujos de trabajo (workflows) para la creación integral de <strong>libros, narrativa transmedia, diseño de personajes consistentes y escenarios inmersivos</strong> 3D/2D.</li>
-                            <li><strong>Desarrollo de Resource Hub:</strong> Creación y mantenimiento de una plataforma web con <a href="https://taraxdigital.netlify.app" target="_blank" style="color:#bca04d; text-decoration:none; font-weight:bold; border-bottom:1px dotted #bca04d;">plantillas y herramientas gratuitas</a> optimizadas para facilitar el trabajo creativo con IA a otros usuarios.</li>
-                            <li><strong>Automatización Creativa:</strong> Implementación de procesos que reducen el tiempo de producción de contenido gráfico y textual en un 70%, manteniendo coherencia estética.</li>
+                            <li><strong>Ingeniería de Prompts:</strong> Workflows para creación de <strong>libros, narrativa transmedia, personajes consistentes y escenarios</strong> 3D/2D.</li>
+                            <li><strong>Resource Hub:</strong> Web con <a href="https://taraxdigital.netlify.app/herramientas" target="_blank" style="color:#bca04d; text-decoration:none; font-weight:bold;">plantillas y herramientas gratuitas</a> para facilitar el trabajo creativo.</li>
+                            <li><strong>Automatización:</strong> Reducción del 70% en tiempo de producción de contenido gráfico.</li>
                         </ul>
-                        <div style="margin-top:4px;">
-                            <span class="tech-badge">LLMs</span> <span class="tech-badge">Midjourney</span> <span class="tech-badge">Narrativa Transmedia</span> <span class="tech-badge">Web Resources</span>
+                        <div style="margin-top:2px;">
+                            <span class="tech-badge">LLMs</span> <span class="tech-badge">Midjourney</span> <span class="tech-badge">Transmedia</span> <span class="tech-badge">Web Resources</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="item-block">
                     <div class="item-header">
-                        <div>
-                            <span class="item-role">Frontend Developer & Product Creator</span>
-                            <span class="item-company">| Tarax Ecosystem</span>
-                        </div>
+                        <div><span class="item-role">Frontend & Product Creator</span> <span class="item-company">| Tarax Digital</span></div>
                         <span class="item-date">2023 - Actualidad</span>
                     </div>
                     <div class="item-desc">
                         Desarrollo de aplicaciones web interactivas (SaaS) sin servidor.
                         <ul>
-                            <li><strong>Generador de Prompts & Editor:</strong> App web con <strong>HTML5 Canvas</strong></li>
-                            <li><strong>Music Fusion App:</strong> SPA para mezcla de audio usando <strong>Web Audio API</strong> </li>
+                            <li><strong>Generador Prompts:</strong> App web con <strong>HTML5 Canvas</strong> para manipulación en cliente.</li>
+                            <li><strong>Music Fusion App:</strong> SPA para mezcla de audio usando <strong>Web Audio API</strong>.</li>
                             <li>Integración de pagos (Gumroad/PayPal) y SEO técnico avanzado.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- TRAYECTORIA PROFESIONAL ADICIONAL -->
+            <!-- TRAYECTORIA ADICIONAL -->
             <section>
                 <h2 class="section-title"><i class="fas fa-briefcase"></i> Trayectoria Profesional</h2>
 
                 <div class="item-block">
                     <div class="item-header">
-                        <div>
-                            <span class="item-role">Frontend Developer</span>
-                            <span class="item-company">| Quorum Publicidad</span>
-                        </div>
+                        <div><span class="item-role">Frontend Developer</span> <span class="item-company">| Quorum Publicidad</span></div>
                         <span class="item-date">2024</span>
                     </div>
                     <div class="item-desc">
@@ -345,15 +394,12 @@
 
                 <div class="item-block">
                     <div class="item-header">
-                        <div>
-                            <span class="item-role">Growth Manager & Content</span>
-                            <span class="item-company">| Spinning Music by Satarax</span>
-                        </div>
+                        <div><span class="item-role">Growth Manager</span> <span class="item-company">Ytb | Spinning Music by Satarax</span></div>
                         <span class="item-date">2013 - Actualidad</span>
                     </div>
                     <div class="item-desc">
                         <ul>
-                            <li>Gestión de ecosistema digital (+200k seguidores). Edición audiovisual profesional.</li>
+                            <li>Gestión ecosistema digital (+200k seguidores). Edición audiovisual pro.</li>
                         </ul>
                     </div>
                 </div>
@@ -364,22 +410,21 @@
                 <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formación Selecta</h2>
                 <div class="edu-grid">
                     <div class="edu-item">
-                        <h4>Certificado Profesional Desarrollo Web (N3)</h4>
+                        <h4>Certificado de Profesionalidad en Desarrollo Web (N3)</h4>
                         <span>Academia Atlántida (580h) | 2024</span>
                     </div>
                     <div class="edu-item">
-                        <h4>Especialización UX/UI </h4>
+                        <h4>Especialización UX/UI</h4>
                         <span>Udemy (60h) | 2022</span>
                     </div>
                     <div class="edu-item">
-                        <h4>Community Manager & SEO/SEM</h4>
+                        <h4>Community Manager & SEO</h4>
                         <span>Cámara de Comercio (260h) | 2022</span>
                     </div>
-                     <div class="edu-item">
-                        <h4>Competencias Digitales Avanzadas</h4>
+                    <div class="edu-item">
+                        <h4>Competencias Digitales</h4>
                         <span>Academia Galilea (60h) | 2023</span>
                     </div>
-                  
                 </div>
             </section>
 
