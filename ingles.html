@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,44 +33,27 @@
             color: var(--text-dark);
         }
 
-        /* --- HOJA A4 ESTRICTA --- */
-        /* --- CONFIGURACIÓN A4 PERFECTA --- */
         .page {
             background: white;
             width: 210mm;
-            height: 296mm; /* Altura fija para forzar el fondo hasta abajo */
+            height: 296mm; 
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
             display: grid;
-            grid-template-columns: 72mm 1fr; /* Sidebar un poco más ancha para que respire */
-            overflow: hidden; /* Evita desbordes */
+            grid-template-columns: 72mm 1fr; 
+            overflow: hidden; 
         }
 
-        /* === BARRA LATERAL (IZQUIERDA) === */
-
-        
-        /* === BARRA LATERAL (MODIFICADA PARA LLEGAR ABAJO) === */
         aside {
             background: var(--sidebar-bg);
             color: white;
             padding: 35px 22px; 
             display: flex;
             flex-direction: column;
-            gap: 25px; /* Espacio constante entre elementos */
-            
-            /* --- EL CAMBIO CLAVE --- */
-            height: 100%; /* Ocupa todo el alto disponible */
-            min-height: 296mm; /* Fuerza bruta: mide lo mismo que la hoja */
-            position: relative; /* Asegura que se pinte correctamente */
+            gap: 25px; 
+            height: 100%; 
+            min-height: 296mm; 
+            position: relative; 
         }
-
-        /* Bloque superior de la sidebar para agrupar perfil y contacto */
-        .sidebar-top {
-            display: flex;
-            flex-direction: column;
-            gap: 50px; /* Espacio entre foto, contacto y skills */
-        }
-
-
 
         .avatar {
             width: 70px; height: 70px;
@@ -114,7 +97,6 @@
             font-size: 0.65rem; color: #e2e8f0;
         }
 
-        /* --- ESTILOS NUEVOS PARA REDES SOCIALES --- */
         .social-icons-container {
             display: flex;
             gap: 15px;
@@ -131,21 +113,19 @@
             transform: translateY(-2px);
         }
 
-        /* === CONTENIDO PRINCIPAL === */
-            main {
+        main {
             padding: 40px 35px;
             display: flex;
             flex-direction: column;
-            gap: 25px; /* Espacio global entre grandes bloques */
+            gap: 25px; 
         }
         header { 
             border-bottom: 2px solid var(--border-color); 
             padding-bottom: 10px; 
             margin-bottom: 15px; 
         }
-        /* Sección general */
         section {
-            margin-bottom: 5px; /* Ajuste fino */
+            margin-bottom: 5px; 
         }
         h1 {
             font-family: 'Playfair Display', serif;
@@ -167,9 +147,8 @@
             letter-spacing: 2px;
             font-weight: 700;
             opacity: 0.8;
-            /* --- NUEVO: ESPACIO SUPERIOR --- */
-    margin-top: 20px; 
-    display: block; 
+            margin-top: 20px; 
+            display: block; 
         }
 
         .summary {
@@ -242,19 +221,18 @@
 <body>
 
     <button class="print-btn" onclick="window.print()">
-        <i class="fas fa-file-pdf"></i> Guardar PDF
+        <i class="fas fa-file-pdf"></i> Save as PDF
     </button>
 
     <div class="page">
-        <!-- SIDEBAR -->
         <aside>
             <div class="avatar">EP</div>
 
             <div>
-                <h3 class="side-title">Contacto</h3>
+                <h3 class="side-title">Contact</h3>
                 <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:helenaperand@gmail.com">helenaperand@gmail.com</a></div>
                 <div class="contact-item"><i class="fas fa-phone"></i> +34 680 613 291</div>
-                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Granada, España</div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Granada, Spain</div>
                 <div class="contact-item"><i class="fas fa-globe"></i> <a href="https://taraxdigital.netlify.app" target="_blank">taraxdigital.app</a></div>
                 <div class="contact-item"><i class="fab fa-linkedin"></i> /elena-perandres</div>
             </div>
@@ -262,7 +240,7 @@
             <div>
                 <h3 class="side-title">Tech Stack</h3>
                 <div class="skill-box">
-                    <div class="skill-label"><span>Generación IA & Prompts</span> <span>100%</span></div>
+                    <div class="skill-label"><span>AI Generation & Prompts</span> <span>100%</span></div>
                     <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:100%"></div></div>
                 </div>
                 <div class="skill-box">
@@ -274,17 +252,17 @@
                     <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
                 </div>
                 <div class="skill-box">
-                    <div class="skill-label"><span>SEO Técnico</span> <span>90%</span></div>
+                    <div class="skill-label"><span>Technical SEO</span> <span>90%</span></div>
                     <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
                 </div>
                 <div class="skill-box">
-                    <div class="skill-label"><span>Canvas / Audio API</span> <span>95%</span></div>
+                    <div class="skill-label"><span>Canvas / Audio API</span> <span>75%</span></div>
                     <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div>
                 </div>
             </div>
 
             <div>
-                <h3 class="side-title">Herramientas</h3>
+                <h3 class="side-title">Tools</h3>
                 <div class="tag-cloud">
                     <span class="tag">VS Code</span>
                     <span class="tag">DaVinci</span>
@@ -304,14 +282,13 @@
                 <div class="tag-cloud">
                     <span class="tag">Content Architect</span>
                     <span class="tag">Growth Hacking</span>
-                    <span class="tag">Comunidades (+200k)</span>
+                    <span class="tag">Communities (+200k)</span>
                     <span class="tag">Video Ads</span>
                 </div>
             </div>
 
-            <!-- NUEVA SECCIÓN DE REDES SOCIALES -->
             <div>
-                <h3 class="side-title">Redes Sociales</h3>
+                <h3 class="side-title">Social Media</h3>
                 <div class="social-icons-container">
                     <a href="https://www.instagram.com/taraxdigital/" target="_blank" class="social-link" title="Instagram">
                         <i class="fa-brands fa-instagram"></i>
@@ -327,7 +304,6 @@
 
         </aside>
 
-        <!-- CONTENIDO PRINCIPAL -->
         <main>
             <header>
                 <h1>Elena <span>Perandrés Molino</span></h1>
@@ -335,25 +311,24 @@
             </header>
 
             <div class="summary">
-                "Especialista en la integración de IA para la creación de activos digitales y desarrollo web. Fusiono la ingeniería de prompts avanzada con programación para crear productos editoriales y herramientas interactivas. Lidero comunidades masivas (+400k) aplicando estrategias de crecimiento orgánico y monetización."
+                "Specialist in AI integration for digital asset creation and web development. I merge advanced prompt engineering with programming to create editorial products and interactive tools. I lead massive communities (+400k) by applying organic growth and monetization strategies."
             </div>
 
-            <!-- PROYECTOS / EXPERIENCIA PRINCIPAL -->
             <section>
-                <h2 class="section-title"><i class="fas fa-brain"></i> Experiencia en IA & Desarrollo</h2>
+                <h2 class="section-title"><i class="fas fa-brain"></i> AI & Development Experience</h2>
                 
                 <div class="item-block">
                     <div class="item-header">
-    <div><span class="item-role">Frontend & Product Creator</span> <span class="item-company">| <a href="https://taraxdigital.netlify.app/">Tarax Digital</a></span></div>
-    <span class="item-date">2023 - Actualidad</span>
-</div>
+                        <div><span class="item-role">Frontend & Product Creator</span> <span class="item-company">| <a href="https://taraxdigital.netlify.app/">Tarax Digital</a></span></div>
+                        <span class="item-date">2023 - Present</span>
+                    </div>
 
                     <div class="item-desc">
-                        Liderazgo en la creación de ecosistemas narrativos y activos digitales con IA.
+                        Leadership in creating narrative ecosystems and digital assets using AI.
                         <ul>
-                            <li><strong>Ingeniería de Prompts:</strong> Workflows para creación de <strong>libros, narrativa transmedia, personajes consistentes y escenarios</strong> 3D/2D.</li>
-                            <li><strong>Resource Hub:</strong> Web con <a href="https://taraxdigital.netlify.app/herramientas" target="_blank" style="color:#bca04d; text-decoration:none; font-weight:bold;">plantillas y herramientas gratuitas</a> para facilitar el trabajo creativo.</li>
-                            <li><strong>Automatización:</strong> Reducción del 70% en tiempo de producción de contenido gráfico.</li>
+                            <li><strong>Prompt Engineering:</strong> Workflows for creating <strong>books, transmedia narratives, consistent characters, and 3D/2D environments</strong>.</li>
+                            <li><strong>Resource Hub:</strong> Developed a website with <a href="https://taraxdigital.netlify.app/herramientas" target="_blank" style="color:#bca04d; text-decoration:none; font-weight:bold;">free templates and tools</a> to streamline creative workflows.</li>
+                            <li><strong>Automation:</strong> Achieved a 70% reduction in production time for graphic content.</li>
                         </ul>
                         <div style="margin-top:2px;">
                             <span class="tech-badge">LLMs</span> <span class="tech-badge">Midjourney</span> <span class="tech-badge">Transmedia</span> <span class="tech-badge">Web Resources</span>
@@ -364,22 +339,21 @@
                 <div class="item-block">
                     <div class="item-header">
                         <div><span class="item-role">Frontend & Product Creator</span> <span class="item-company">| Tarax Digital</span></div>
-                        <span class="item-date">2023 - Actualidad</span>
+                        <span class="item-date">2023 - Present</span>
                     </div>
                     <div class="item-desc">
-                        Desarrollo de aplicaciones web interactivas (SaaS) sin servidor.
+                        Development of interactive serverless web applications (SaaS).
                         <ul>
-                            <li><strong>Generador Prompts:</strong> App web con <strong>HTML5 Canvas</strong> para manipulación en cliente.</li>
-                            <li><strong>Music Fusion App:</strong> SPA para mezcla de audio usando <strong>Web Audio API</strong>.</li>
-                            <li>Integración de pagos (Gumroad/PayPal) y SEO técnico avanzado.</li>
+                            <li><strong>Prompt Generator:</strong> Web app using <strong>HTML5 Canvas</strong> for client-side image/text manipulation.</li>
+                            <li><strong>Music Fusion App:</strong> SPA for audio mixing using <strong>Web Audio API</strong>.</li>
+                            <li>Payment integration (Gumroad/PayPal) and advanced technical SEO.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- TRAYECTORIA ADICIONAL -->
             <section>
-                <h2 class="section-title"><i class="fas fa-briefcase"></i> Trayectoria Profesional</h2>
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
 
                 <div class="item-block">
                     <div class="item-header">
@@ -388,7 +362,7 @@
                     </div>
                     <div class="item-desc">
                         <ul>
-                            <li>Maquetación web corporativa, optimización WPO y SEO On-Page.</li>
+                            <li>Corporate web layout, WPO (Web Performance Optimization), and On-Page SEO.</li>
                         </ul>
                     </div>
                 </div>
@@ -396,35 +370,34 @@
                 <div class="item-block">
                     <div class="item-header">
                         <div><span class="item-role">Growth Manager</span> <span class="item-company">Ytb | Spinning Music by Satarax</span></div>
-                        <span class="item-date">2013 - Actualidad</span>
+                        <span class="item-date">2013 - Present</span>
                     </div>
                     <div class="item-desc">
                         <ul>
-                            <li>Gestión ecosistema digital (+200k seguidores). Edición audiovisual pro.</li>
+                            <li>Digital ecosystem management (+200k followers). Professional audiovisual editing and content strategy.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- FORMACIÓN -->
             <section>
-                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formación Selecta</h2>
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Selected Education</h2>
                 <div class="edu-grid">
                     <div class="edu-item">
-                        <h4>Certificado de Profesionalidad en Desarrollo Web (N3)</h4>
-                        <span>Academia Atlántida (580h) | 2024</span>
+                        <h4>Professional Certificate in Web Development (Level 3)</h4>
+                        <span>Atlántida Academy (580h) | 2024</span>
                     </div>
                     <div class="edu-item">
-                        <h4>Especialización UX/UI</h4>
+                        <h4>UX/UI Specialization</h4>
                         <span>Udemy (60h) | 2022</span>
                     </div>
                     <div class="edu-item">
                         <h4>Community Manager & SEO</h4>
-                        <span>Cámara de Comercio (260h) | 2022</span>
+                        <span>Chamber of Commerce (260h) | 2022</span>
                     </div>
                     <div class="edu-item">
-                        <h4>Competencias Digitales</h4>
-                        <span>Academia Galilea (60h) | 2023</span>
+                        <h4>Digital Competencies</h4>
+                        <span>Galilea Academy (60h) | 2023</span>
                     </div>
                 </div>
             </section>
