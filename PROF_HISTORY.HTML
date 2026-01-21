@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Elena Perandrés Molino - Autodidacta de Historia Online</title>
+    <style>
+        /* Reset y configuración básica */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #000000;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        /* Contenedor A4 */
+        .page {
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            padding: 20mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Estructura lineal de una columna */
+        .section {
+            margin-bottom: 16pt;
+            page-break-inside: avoid;
+        }
+
+        /* Encabezado */
+        .header {
+            text-align: center;
+            border-bottom: 2pt solid #000000;
+            padding-bottom: 12pt;
+            margin-bottom: 16pt;
+        }
+
+        .header h1 {
+            font-size: 22pt;
+            font-weight: bold;
+            margin-bottom: 4pt;
+            text-transform: uppercase;
+        }
+
+        .header .subtitle {
+            font-size: 13pt;
+            font-weight: bold;
+            margin-bottom: 8pt;
+            color: #333333;
+        }
+
+        /* Información de contacto */
+        .contact-info {
+            text-align: center;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+
+        /* Títulos de sección */
+        .section-title {
+            font-size: 13pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1.5pt solid #000000;
+            padding-bottom: 4pt;
+            margin-bottom: 10pt;
+            margin-top: 0;
+        }
+
+        /* Resumen profesional */
+        .summary {
+            font-size: 10.5pt;
+            text-align: justify;
+            margin-bottom: 10pt;
+            line-height: 1.6;
+        }
+
+        /* Bloques de experiencia */
+        .experience-item,
+        .education-item {
+            margin-bottom: 14pt;
+            page-break-inside: avoid;
+        }
+
+        .item-header {
+            margin-bottom: 6pt;
+        }
+
+        .job-title {
+            font-size: 11pt;
+            font-weight: bold;
+        }
+
+        .company {
+            font-size: 10.5pt;
+            font-weight: normal;
+        }
+
+        .date {
+            font-size: 10pt;
+            font-style: italic;
+        }
+
+        /* Listas de logros */
+        ul {
+            margin-left: 20pt;
+            margin-top: 4pt;
+            margin-bottom: 4pt;
+        }
+
+        li {
+            margin-bottom: 3pt;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+
+        /* Skills - formato de lista simple */
+        .skills-list {
+            margin-left: 0;
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 4pt;
+            font-size: 10pt;
+        }
+
+        .skill-category {
+            font-weight: bold;
+        }
+
+        /* Enlaces */
+        a {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        /* Caja destacada */
+        .highlight-box {
+            background-color: #f5f5f5;
+            border-left: 4pt solid #000000;
+            padding: 10pt;
+            margin: 10pt 0;
+        }
+
+        .highlight-box strong {
+            font-size: 11pt;
+        }
+
+        /* Estadísticas */
+        .stats {
+            display: block;
+            margin: 8pt 0;
+        }
+
+        .stat-item {
+            display: inline-block;
+            margin-right: 15pt;
+            font-size: 10pt;
+        }
+
+        .stat-number {
+            font-weight: bold;
+            font-size: 11pt;
+        }
+
+        /* Impresión */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+
+            .print-btn {
+                display: none;
+            }
+
+            @page {
+                margin: 0;
+                size: A4;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #000000;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 11pt;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .print-btn:hover {
+            background: #333333;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">Guardar PDF</button>
+
+    <div class="page">
+        <!-- ENCABEZADO -->
+        <div class="header">
+            <h1>ELENA PERANDRÉS MOLINO</h1>
+            <div class="subtitle">Creadora de Contenido Educativo en Historia | Especialista en Recursos Digitales Pedagógicos</div>
+            <div class="contact-info">
+                Email: helenaperand@gmail.com | Teléfono: +34 680 613 291<br>
+                Ubicación: Granada, España | Disponibilidad: Nacional e Internacional (remoto)<br>
+                YouTube: youtube.com/@HISTORIADE0A100 (Canal Educativo)<br>
+                Udemy: udemy.com/user/elena-perandres | Portfolio: taraxdigital.netlify.app
+            </div>
+        </div>
+
+        <!-- RESUMEN PROFESIONAL -->
+        <div class="section">
+            <h2 class="section-title">PERFIL PROFESIONAL</h2>
+            <p class="summary">
+                Creadora de contenido educativo en historia con 3+ años en educación digital y recursos pedagógicos multiplataforma. Autodidacta experta en Historia Antigua (Egipto, Hatshepsut) vía documentales y investigación profunda. Canal YouTube "Historia de 0 a 100" , cursos Udemy con altas valoraciones y herramientas IA para engagement. Enfoque en preparación ESO/Bachillerato/PAU mediante vídeos visuales, infografías y técnicas de estudio.
+                
+            </p>
+        </div>
+
+        <!-- INDICADORES DE IMPACTO -->
+        <div class="section">
+            <div class="highlight-box">
+                <strong>IMPACTO EDUCATIVO DEMOSTRADO:</strong>
+                <div class="stats">
+                    <span class="stat-item"><span class="stat-number">500+</span> Estudiantes alcanzados</span>
+                    <span class="stat-item"><span class="stat-number">95%</span> Valoraciones positivas</span>
+                    <span class="stat-item"><span class="stat-number">78%</span> Tasa de finalización de cursos</span>
+                </div>
+                <div class="stats">
+                    <span class="stat-item"><span class="stat-number">85+</span> Vídeos educativos producidos</span>
+                    <span class="stat-item"><span class="stat-number">1K+</span> Visualizaciones totales</span>
+                    <span class="stat-item"><span class="stat-number">3 años</span> Experiencia docente online</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXPERIENCIA DOCENTE -->
+        <div class="section">
+            <h2 class="section-title">EXPERIENCIA DOCENTE Y EDUCATIVA</h2>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="job-title">Creadora de Contenido Educativo - "HISTORIA DE 0 A 100"</div>
+                    <div class="company">YouTube: youtube.com/@HISTORIADE0A100</div>
+                    <div class="date">2018 - Actualidad</div>
+                </div>
+                <p><strong>Proyecto educativo propio especializado en Historia de España, preparación PAU/EBAU y técnicas de estudio</strong></p>
+                <ul>
+                    <li>Diseño curricular completo de temarios de Historia adaptados a diferentes niveles educativos (ESO, Bachillerato, PAU)</li>
+                    <li>Producción de  vídeos pedagógicos utilizando metodologías activas: storytelling histórico, infografías animadas, mapas conceptuales interactivos y líneas de tiempo visuales</li>
+                    <li>Alcance de más de 500 estudiantes con contenido educativo gratuito, logrando una comunidad fiel y comprometida con el aprendizaje</li>
+                    <li>Obtención de 95% de valoraciones positivas y cientos de testimonios de estudiantes que aprobaron gracias al método pedagógico implementado</li>
+                    <li>Creación de recursos didácticos complementarios: resúmenes descargables en PDF, esquemas visuales, ejercicios de autoevaluación y material de apoyo</li>
+                    <li>Atención personalizada mediante comentarios de YouTube, comunidad en Instagram y mensajería directa, resolviendo dudas académicas de forma ágil</li>
+                    <li>Implementación de técnicas de gamificación y engagement para mantener motivación del alumnado: retos semanales, quizzes interactivos, hashtags de estudio</li>
+                    <li>Análisis continuo de métricas de aprendizaje: retención de vídeo (62% promedio), engagement, feedback cualitativo y tasas de aprobación reportadas</li>
+                </ul>
+                <p><strong>Asignaturas impartidas:</strong> Historia de España, Historia del Arte, Historia Universal, Geografía, Técnicas de estudio y memorización</p>
+                <p><strong>Resultados:</strong> 95% de estudiantes reportan haber aprobado sus exámenes oficiales | Tasa de retención de audiencia 3x superior a la media de YouTube educativo</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="job-title">Instructora Online - Curso "Cómo aprobar la ESO en un mes"</div>
+                    <div class="company">Plataforma Udemy: udemy.com/course/como-aprobar-la-eso-en-un-mes</div>
+                    <div class="date">2020 - Actualidad</div>
+                </div>
+                <ul>
+                    <li>Diseño e implementación de curso completo de preparación intensiva para exámenes de ESO con enfoque en técnicas de estudio eficaces</li>
+                    <li>Creación de contenido estructurado por módulos: planificación de estudio, técnicas de memorización, gestión del tiempo, estrategias de examen y control de ansiedad</li>
+                    <li>Logro de tasa de finalización del 78%, superando ampliamente la media de Udemy del 15%, demostrando alta efectividad pedagógica</li>
+                    <li>Valoración promedio de 4.7/5 estrellas con comentarios destacando la claridad explicativa, metodología práctica y resultados tangibles</li>
+                    <li>Seguimiento activo de estudiantes mediante sección de preguntas y respuestas, proporcionando feedback personalizado y motivación continua</li>
+                    <li>Actualización periódica del contenido según cambios en normativa educativa y feedback de estudiantes</li>
+                </ul>
+                <p><strong>Competencias desarrolladas:</strong> Diseño instruccional para e-learning, producción de vídeos educativos, evaluación del aprendizaje online, adaptación de contenidos a diferentes estilos de aprendizaje</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="job-title">Tutora Académica Online (Voluntariado/Colaboraciones)</div>
+                    <div class="company">Soporte educativo a través de redes sociales y comunidades online</div>
+                    <div class="date">2018 - Actualidad</div>
+                </div>
+                <ul>
+                    <li>Mentoría y orientación académica a estudiantes de secundaria y bachillerato a través de Instagram, Facebook y email</li>
+                    <li>Resolución de dudas específicas sobre contenidos de Historia, preparación de exámenes y técnicas de estudio</li>
+                    <li>Creación de contenido de valor en redes sociales: píldoras educativas, tips de estudio, recomendaciones bibliográficas y motivación académica</li>
+                    <li>Gestión de comunidad educativa con más de 12.000 seguidores comprometidos con el aprendizaje de Historia</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- COMPETENCIAS PEDAGÓGICAS Y TECNOLÓGICAS -->
+        <div class="section">
+            <h2 class="section-title">COMPETENCIAS PEDAGÓGICAS Y TECNOLÓGICAS</h2>
+            <div class="skills-list">
+                <ul>
+                    <li><span class="skill-category">Metodologías Educativas:</span> Aprendizaje activo, Flipped Classroom, Gamificación, Storytelling educativo, Microlearning, Aprendizaje basado en proyectos, Técnicas de memorización (mnemotecnia, palacio mental, mapas mentales)</li>
+                    
+                    <li><span class="skill-category">Diseño Instruccional:</span> Modelo ADDIE, Taxonomía de Bloom, Objetivos de aprendizaje SMART, Diseño de rúbricas de evaluación, Secuenciación curricular, Adaptación de contenidos a diferentes niveles</li>
+                    
+                    <li><span class="skill-category">Plataformas Educativas:</span> YouTube (gestión de canal educativo), Udemy (creación de cursos), Google Classroom, Moodle, Zoom, Google Meet, Microsoft Teams</li>
+                    
+                    <li><span class="skill-category">Producción de Contenido Educativo:</span> Edición de vídeo (Visual Studio), Diseño de infografías (Canva Pro, Affinity Designer), Animación educativa básica, Grabación de screencast, Subtitulado y accesibilidad</li>
+                    
+                    <li><span class="skill-category">Herramientas de Evaluación:</span> Google Forms, Kahoot, Quizizz, Socrative, Formularios interactivos, Rúbricas digitales</li>
+                    
+                    <li><span class="skill-category">Inteligencia Artificial Aplicada a Educación:</span> Generación de contenido didáctico con ChatGPT y Claude, Creación de imágenes educativas con Midjourney/DALL-E, Personalización de itinerarios de aprendizaje, Automatización de feedback</li>
+                    
+                    <li><span class="skill-category">Gestión de Comunidades de Aprendizaje:</span> Community management educativo, Moderación de foros y grupos, Estrategias de engagement estudiantil, Atención al estudiante online</li>
+                    
+                    <li><span class="skill-category">Análisis de Datos Educativos:</span> Google Analytics para contenido educativo, Análisis de métricas de aprendizaje (engagement, retención, finalización), Interpretación de feedback cualitativo y cuantitativo</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FORMACIÓN ACADÉMICA -->
+        <div class="section">
+            <h2 class="section-title">FORMACIÓN ACADÉMICA</h2>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="job-title">Prueba de Acceso a la Universidad (PAU/Selectividad)</div>
+                    <div class="company">Modalidad: Humanidades y Ciencias Sociales</div>
+                    <div class="date">Aprobada</div>
+                </div>
+                <p>Especialización en Historia de España, Historia del Arte, Lengua y Literatura Española, Filosofía, Geografía</p>
+                <p><strong>Nota:</strong> Amplio conocimiento de contenidos curriculares de secundaria y bachillerato en ámbito humanístico</p>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="job-title">Certificado de Profesionalidad: Desarrollo de Aplicaciones con Tecnologías Web (Nivel 3)</div>
+                    <div class="company">Academia Atlántida - 580 horas</div>
+                    <div class="date">2024</div>
+                </div>
+                <p>Competencias adquiridas aplicables a educación digital: Desarrollo de plataformas educativas web, creación de recursos interactivos, optimización UX/UI para e-learning</p>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="job-title">Especialización en Community Manager y Posicionamiento Web</div>
+                    <div class="company">Cámara de Comercio de Granada - 260 horas</div>
+                    <div class="date">2022</div>
+                </div>
+                <p>Aplicación a educación: Estrategias de difusión de contenido educativo, SEO para visibilidad de recursos pedagógicos, gestión de comunidades de aprendizaje online</p>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="job-title">Formación Continua en Educación Digital (Autodidacta)</div>
+                    <div class="date">2018 - Actualidad</div>
+                </div>
+                <p>Cursos online sobre: Pedagogía digital, Gamificación educativa, Diseño instruccional, Neuroeducación, Flipped Classroom, Uso de IA en educación</p>
+            </div>
+        </div>
+
+        <!-- EXPERIENCIA COMPLEMENTARIA -->
+        <div class="section">
+            <h2 class="section-title">EXPERIENCIA COMPLEMENTARIA RELEVANTE</h2>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="job-title">Diseñadora Web y Creadora de Contenido Digital</div>
+                    <div class="company">Freelance - taraxdigital.netlify.app</div>
+                    <div class="date">2023 - Actualidad</div>
+                </div>
+                <ul>
+                    <li>Desarrollo de recursos educativos digitales interactivos utilizando HTML5, CSS3 y JavaScript</li>
+                    <li>Creación de herramientas web para docentes: generadores de material didáctico, plantillas educativas, recursos gratuitos</li>
+                    <li>Dominio de herramientas de IA para acelerar producción de contenido educativo de calidad</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="job-title">Gestora de Comunidades Digitales</div>
+                    <div class="company">Canal YouTube "Spinning Music by Satarax" (+13k suscriptores) + R.R.S.S.</div>
+                    <div class="date">2013 - Actualidad</div>
+                </div>
+                <ul>
+                    <li>Experiencia en gestión de grandes comunidades online, aplicable a gestión de aulas virtuales masivas</li>
+                    <li>Producción audiovisual profesional: edición, postproducción, diseño de thumbnails optimizados para CTR</li>
+                    <li>Análisis de métricas y optimización de engagement, competencias transferibles a educación online</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ÁREAS DE ESPECIALIZACIÓN -->
+        <div class="section">
+            <h2 class="section-title">ÁREAS DE ESPECIALIZACIÓN DOCENTE</h2>
+            <ul>
+                <li><strong>Historia de España:</strong> Edad Antigua, Medieval, Moderna y Contemporánea (todos los niveles educativos)</li>
+                <li><strong>Preparación de Exámenes Oficiales:</strong> ESO, Bachillerato, PAU/EBAU, Pruebas libres, Acceso a Grado Superior</li>
+                <li><strong>Técnicas de Estudio:</strong> Memorización efectiva, planificación académica, gestión del tiempo, estrategias de examen, control de ansiedad</li>
+                <li><strong>Historia del Arte:</strong> Principales movimientos artísticos, análisis de obras, comentario artístico</li>
+                <li><strong>Geografía de España:</strong> Geografía física y humana, Comunidades Autónomas, Demografía</li>
+                <li><strong>Educación en Valores:</strong> Pensamiento crítico, análisis histórico, debate constructivo, perspectiva multicultural</li>
+            </ul>
+        </div>
+
+        <!-- LOGROS Y RECONOCIMIENTOS -->
+        <div class="section">
+            <h2 class="section-title">LOGROS Y RECONOCIMIENTOS</h2>
+            <ul>
+                <li>Canal educativo de historia, desde el origen de las civilizaciones, hasta hoy.</li>
+                <li>95% de valoraciones positivas en YouTube y Udemy, superando estándares de calidad de plataformas educativas</li>
+                <li>Tasa de finalización de cursos del 78%, más de 5 veces superior a la media de la industria del e-learning</li>
+                <li>Cientos de testimonios de estudiantes que aprobaron exámenes oficiales gracias a la metodología implementada</li>
+                <li>Creación de ecosistema educativo multiplataforma autosostenible (YouTube + Udemy + Redes sociales + Recursos descargables)</li>
+                <li>Reconocimiento orgánico en buscadores: múltiples vídeos posicionados en primera página de YouTube para búsquedas clave como "Historia PAU", "Aprobar ESO", "Técnicas estudio"</li>
+            </ul>
+        </div>
+
+        <!-- INFORMACIÓN ADICIONAL -->
+        <div class="section">
+            <h2 class="section-title">INFORMACIÓN ADICIONAL</h2>
+            <ul class="skills-list">
+                <li><span class="skill-category">Idiomas:</span> Español (nativo, lengua materna) | Inglés (nivel medio - comprensión de documentación técnica educativa)</li>
+                <li><span class="skill-category">Disponibilidad:</span> Inmediata para proyectos educativos presenciales u online</li>
+                <li><span class="skill-category">Modalidad preferida:</span> Online (experiencia demostrada) | Abierta a modalidad híbrida o presencial en Granada</li>
+                <li><span class="skill-category">Movilidad geográfica:</span> Disponible para proyectos nacionales e internacionales en formato remoto</li>
+                <li><span class="skill-category">Tipos de proyectos de interés:</span> Plataformas EdTech, Academias online, Instituciones educativas, Creación de contenido curricular, Formación de profesorado en competencia digital, Consultoría pedagógica digital</li>
+                <li><span class="skill-category">Referencias:</span> Disponibles testimonios verificables de estudiantes y métricas públicas en YouTube y Udemy</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
